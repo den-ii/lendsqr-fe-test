@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import { BsBell } from "react-icons/bs";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
-import { GrDocumentText } from "react-icons/gr";
+import { IoDocumentOutline } from "react-icons/io5";
+import { IoNotificationsOutline } from "react-icons/io5";
 import { FaRegUser } from "react-icons/fa";
+import useDropoff from "../../hooks/useDropOff";
 
 export const Navbar = () => {
   const [burger, setBurger] = useState(false);
+  const closeBurgerMenu = () => {
+    setBurger(false);
+  };
+  const burgerMenuRef = useDropoff(closeBurgerMenu);
 
   const burgerClass = burger ? "burger-none" : "";
   return (
@@ -46,17 +52,21 @@ export const Navbar = () => {
           <div className="logo">
             <img src="/assets/logo.svg" loading="lazy" alt="logo" />
           </div>
-          <div className="burger" onClick={() => setBurger(!burger)}>
+          <div
+            className="burger"
+            ref={burgerMenuRef}
+            onClick={() => setBurger(!burger)}
+          >
             <HiOutlineMenuAlt3 />
           </div>
         </div>
         <div className={`burger-dropdown ${burgerClass}`}>
           <div className="docs">
-            <GrDocumentText />
+            <IoDocumentOutline />
             <span>Docs</span>
           </div>
           <div className="notification">
-            <FaRegUser />
+            <IoNotificationsOutline />
             <span>Notification</span>
           </div>
           <div className="profile">

@@ -20,13 +20,16 @@
             top: 80px;
             left: -5px;
             box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+            -webkit-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
             transition: .5s;
+            -webkit-transition: .5s;
             z-index: 100;
 
         }
 
         nav .arrow-mobile.mobile-inactive {
             transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
             left: 280px;
         }
 
@@ -41,8 +44,10 @@
         background-color: $default;
         position: relative;
         transition: 0.5s;
+        -webkit-transition: 0.5s;
         padding-top: 3.9rem;
         box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+        -webkit-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
         overflow: hidden;
         width: 283px;
         z-index: 99;

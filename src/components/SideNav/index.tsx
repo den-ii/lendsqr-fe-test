@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { HiOutlineArrowRight } from "react-icons/hi";
+import useDropoff from "../../hooks/useDropOff";
 
 export const SideNav = () => {
   const [mobile, setMobile] = useState(true);
@@ -9,15 +10,21 @@ export const SideNav = () => {
     localStorage.clear();
     navigate("/signin");
   };
+  const closeSideNav = () => {
+    setMobile(true);
+  };
+  const sideNavRef = useDropoff(closeSideNav);
+
   const mobileClass = mobile ? "mobile-active" : "mobile-inactive";
   return (
-    <div className="side-nav">
+    <div ref={sideNavRef} className="side-nav">
       <div></div>
       <nav className={`${mobileClass}`}>
         <div
           className={`arrow-mobile ${mobileClass}`}
           onClick={() => setMobile(!mobile)}
         >
+          llll
           <HiOutlineArrowRight />
         </div>
         <div className="organization">
