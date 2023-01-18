@@ -1,0 +1,99 @@
+.filter-input {
+    background-color: $default;
+    position: absolute;
+    top: -515px;
+    left: 10px;
+    font-size: $size-m2;
+    width: 270px;
+    border: 1px solid rgba(84, 95, 125, 0.14);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    z-index: 100;
+
+    form {
+        margin: 2rem 0;
+
+        .form-container {
+            margin-bottom: 2rem;
+        }
+
+        label {
+            display: block;
+            width: 230px;
+            margin: auto;
+            margin-bottom: 0.5rem;
+        }
+
+        input,
+        select {
+            display: block;
+            width: 230px;
+            margin: auto;
+            padding: 1.2rem 2rem;
+            background: #FFFFFF;
+            font-family: $WorkSans;
+            border: 1px solid rgba(33, 63, 125, 0.5);
+            border-radius: 8px;
+
+            &::placeholder {
+                color: rgba(33, 63, 125, 0.5)
+            }
+
+        }
+
+        select {
+            appearance: none;
+            cursor: pointer;
+        }
+
+        .select {
+            position: relative;
+
+            img {
+                position: absolute;
+                top: 50%;
+                transform: translateY(90%);
+                right: 40px;
+
+                pointer-events: none;
+            }
+        }
+
+       
+    
+
+    }
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        width: 230px;
+        margin: auto;
+        margin-bottom: 3rem;
+
+        button {
+            width: 98px;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            font-family: $WorkSans;
+            
+        }
+
+        .reset {
+            border: 1px solid #545F7D;
+            background-color: $default;
+            color: #545F7D;
+            display: flex;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            border: 1px solid $secondary;
+            background-color: $secondary;
+            color: $default;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

@@ -1,0 +1,115 @@
+
+.login{
+    display: flex;
+    height: 100vh;
+    @mixin side{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 4%;
+    }
+    .art-side{
+        @include side; 
+        background-color: $defaultbg;  
+        .logo{
+            max-width: 173px;
+            position: absolute;
+            top: 10%;
+            img{
+                width: 100%;
+            }
+            
+        }
+        .art-img{
+            width: 95%;
+            max-width: 600px;
+            margin-top: 5rem;
+            img{
+                width: 100%;
+            }
+        }
+    }
+    .form-side{
+        @include side;
+        font-family: $Avenir;
+        padding-left: 6%;
+        
+        .greetings h2{
+            font-family: $Avenir-bold;
+            font-size: $size-xl;
+            font-weight: $font-wlg;
+            color: $primary;
+        }
+        p {
+            margin-top: 1rem;
+            font-size: 2rem;
+            color: $muted;
+        }
+        .form{
+            margin-top: 6rem;
+            div{
+                margin-bottom: 2.4rem;
+                position: relative;
+                width: 446px;
+            }
+            input{
+                width: 446px;
+                font-size: $size-m2;
+                font-family: $Avenir;
+                padding: 1.5rem;
+                border: 2px solid rgba(84, 95, 125, 0.15);
+                border-radius: 5px;
+                &:focus{
+                    border: none;
+                    outline: 2px solid $secondary;
+                }
+            }
+            @mixin fonts{
+                font-family: $Avenir-bold;
+                font-weight: 600;
+            }
+            .error{
+                display: flex;
+                align-items: center;
+                font-family: 'Trebuchet MS';
+                border-radius: 8px;
+                padding: 1rem;
+                font-size: 2rem;
+                color: $danger;
+                background-color: (lighten($color: $danger, $amount: 50));
+                .text{
+                    font-size: $size-m2;
+                    margin-left: 1rem;
+                }
+            }
+            .show-pswd{
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 10px;
+                font-size: $size-sm;
+                color: lighten($secondary, 7%);
+                cursor: pointer;
+                @include fonts;
+            }
+            .forgot-pswd{
+                color: lighten($secondary, 7%);
+                font-size: $size-sm;
+                @include fonts;
+                margin-bottom: 3rem;
+
+            }
+            button{
+                background-color: $secondary;
+                color: $default;
+                border-radius: 8px;
+                width: 447px;
+                padding: 1.5rem;
+                @include fonts;
+            }
+        }
+        
+    }
+    
+}

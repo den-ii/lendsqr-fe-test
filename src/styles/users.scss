@@ -1,0 +1,13 @@
+.users{
+    font-family: $WorkSans;
+    color: $primary;
+    
+    .heading{
+        font-weight: $font-w;
+        font-size: $size-l;
+
+    }
+    .usersNum, .filteredSection{
+        margin-top: 4rem;
+    }
+}

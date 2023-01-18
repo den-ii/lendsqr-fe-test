@@ -1,0 +1,134 @@
+.side-nav {
+    font-family: $WorkSans;
+    color: $primary;
+    width: 283px;
+    background-color: $default;
+    position: relative;
+    transition: 1s;
+
+
+    .arrow-mobile {
+        display: none;
+    }
+
+    @media screen and (max-width: 700px) {
+        .arrow-mobile {
+            display: block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: $size-l;
+            background-color: white;
+            position: absolute;
+            right: -40px;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+            transition: .5s;
+
+        }
+
+        .arrow-mobile.mobile-inactive {
+            transform: rotate(180deg);
+        }
+
+    }
+
+
+
+
+
+    nav {
+        padding-top: 3.9rem;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+
+        .dashboard {
+            margin-bottom: 1rem;
+        }
+
+        .organization {
+            display: flex;
+            margin-bottom: 5rem;
+            cursor: pointer;
+            padding-left: 3rem;
+
+            p {
+                margin: 0 1rem;
+            }
+        }
+
+        .customers,
+        .business,
+        .settings {
+            .heading {
+                margin: 3rem 0 1rem;
+            }
+        }
+
+        .side-link {
+            display: flex;
+            padding: 1.5rem 3rem;
+            opacity: 0.5;
+
+            p {
+                margin-left: 1rem;
+            }
+
+
+        }
+
+        .active {
+            background-color: (lighten($secondary, 42%));
+            opacity: 1;
+            border-left: 3.5px solid $secondary;
+        }
+
+        .heading {
+            font-size: $size-sm;
+            font-weight: $font-w;
+            padding-left: 3rem;
+        }
+
+
+    }
+
+    .logout-container {
+        height: 100%;
+        padding: 3rem;
+        color: $primary;
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        justify-content: space-between;
+
+        .logout {
+            cursor: pointer;
+            display: flex;
+            gap: 1rem;
+            font-weight: 500;
+
+            &:hover {
+                color: $danger;
+            }
+        }
+    }
+}
+
+.side-nav.mobile-active {
+    @media screen and (max-width: 700px) {
+        width: 0px;
+
+        nav {
+            overflow: hidden;
+        }
+    }
+}
+
+.side-nav.mobile-inactive {
+    @media screen and (max-width: 700px) {
+        width: 283px;
+
+
+    }
+}

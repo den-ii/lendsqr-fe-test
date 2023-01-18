@@ -1,3 +1,22 @@
-body{
-    background-color: blue
-}
+//variables
+
+@import 'variables';
+
+//default
+@import 'default';
+
+
+
+//components/pages
+@import 'login';
+@import 'dashboard';
+@import 'navbar';
+@import 'sidenav';
+@import 'users';
+@import 'usersNum';
+@import 'filteredArr';
+@import 'filterInput';
+@import 'viewDetails';
+@import 'view-userDetails';
+@import 'userDetailsHead';
+@import 'generalUserDetails';

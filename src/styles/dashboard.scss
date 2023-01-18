@@ -1,0 +1,30 @@
+.dashboard {
+    .outlet__side-nav {
+        margin-top: 100px;
+        display: flex;
+        justify-content: space-between;
+
+        @media screen and (max-width: 700px) {
+            display: block;
+        }
+    }
+
+    .side-navs {
+        @media screen and (max-width: 700px) {
+            position: absolute;
+        }
+    }
+
+    .main {
+        width: 100%;
+        background-color: $defaultbg;
+
+        .outlet {
+            width: 93%;
+            max-width: 1037px;
+            margin: 0 auto;
+            margin-top: 6rem;
+
+        }
+    }
+}

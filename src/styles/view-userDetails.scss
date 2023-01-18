@@ -1,0 +1,41 @@
+.view-userDetails{
+    font-family: $WorkSans;
+    color: $primary;
+    .back{
+        display: flex;
+        gap: 1.4rem;
+        align-items: center;
+        color: $primary2;
+        cursor: pointer;
+    }
+    .top-head{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3.2rem;
+        .title{
+            font-size: $size-l;
+            font-weight: 500;
+        }
+        .buttons{
+            
+            font-weight: 600;
+            display: flex;
+            gap: 2rem;
+            button {
+                padding: 1rem;
+                border-radius: 8px;
+                background-color: $defaultbg;
+                font-size: $size-m2;
+                font-family: $WorkSans;
+            }
+            .blacklist{
+                color: $danger;
+                border: 1px solid $danger;
+            }
+            .active{
+                color: $secondary;
+                border: 1px solid $secondary;
+            }
+        }
+    }
+}

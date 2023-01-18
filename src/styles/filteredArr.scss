@@ -1,0 +1,200 @@
+.filtered-section {
+    display: flex;
+    min-height: 100vh;
+    justify-content: space-between;
+    flex-direction: column;
+    .main-container {
+        background: #FFFFFF;
+        border: 1px solid rgba(33, 63, 125, 0.06);
+        box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+        border-radius: 4px;
+        padding: 3rem 2.5rem 0;
+
+        .main {
+            .allusers {
+                color: #545F7D;
+                margin-right: 1rem;
+            }
+
+            .heading {
+                display: grid;
+                width: 100%;
+                grid-template-columns: repeat(6, 1fr);
+                font-size: $size-sm;
+                gap: 3.2rem;
+                background: #FFFFFF;
+
+                @media screen and (max-width: 1400px) {
+                    grid-template-columns: repeat(5, 1fr);
+                }
+
+                @media screen and (max-width: 1200px) {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+
+            }
+
+            .profile {
+                display: grid;
+                cursor: pointer;
+                padding: 2rem 0;
+                border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+                width: 100%;
+                grid-template-columns: repeat(6, 1fr);
+                font-size: $size-sm;
+                gap: 3.5rem;
+                background: #FFFFFF;
+                color: #545F7D;
+
+                @media screen and (max-width: 1400px) {
+                    grid-template-columns: repeat(5, 1fr);
+                }
+
+                @media screen and (max-width: 1200px) {
+                    grid-template-columns: repeat(4, 1fr);
+                    align-content: space-between;
+                }
+
+                div {
+                    overflow: hidden;
+                }
+
+                @mixin isUserColor($color) {
+                    background-color: lighten($color, 45%);
+                    color: $color;
+                    padding: 1.2rem;
+                    border-radius: 100px;
+                    height: 30px;
+                    //max-width: 80px;
+                    display: flex;
+                    align-items: center;
+                }
+
+                @mixin isUserFlex {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+                .isPending,
+                .isActive,
+                .isInactive,
+                .isBlacklisted {
+                    @include isUserFlex;
+                }
+
+                .isPending span {
+                    @include isUserColor($pending);
+                }
+
+                .isActive span {
+                    @include isUserColor($success);
+
+
+                }
+
+                .isInactive span {
+                    @include isUserColor($muted);
+
+                }
+
+                .isBlacklisted span {
+                    @include isUserColor($danger);
+
+                }
+
+
+            }
+
+            .headers {
+                display: flex;
+
+            }
+            @media screen and (max-width: 1400px) {
+                .phone {
+                    display: none;
+                }
+            }
+        
+            @media screen and (max-width: 1200px) {
+                 .email {
+                    display: none;
+                }
+            }
+
+
+        }
+       
+    }
+
+    .filtering {
+        display: flex;
+        justify-content: space-between;
+        background-color: $defaultbg;
+
+        .filter-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .filter {
+            margin: 0 1rem;
+            width: 80px;
+            // height: 30px;
+            padding: 1rem;
+            display: flex;
+            font-family: 'Work Sans';
+            font-style: normal;
+            font-weight: 500;
+            background-color: lighten($color: $primary, $amount: 60%);
+            border-radius: 6px;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    .pagination-container {
+        margin-top: 2rem;
+
+        .previous,
+        .next {
+            background: rgba(33, 63, 125, 0.1);
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    }
+
+    .pagination {
+        display: flex;
+
+        .break {
+            align-self: flex-end;
+            padding: 1rem;
+        }
+
+        .previous a,
+        .next a {
+            padding: 1rem;
+            display: block;
+        }
+
+        .pagination-link {
+            padding: 1rem;
+            display: block;
+            color: lighten(#545F7D, 30%);
+            cursor: pointer;
+
+
+        }
+
+        li.selected {
+            .active-page {
+                color: #545F7D;
+                font-weight: 500;
+            }
+        }
+    }
+
+  
+}

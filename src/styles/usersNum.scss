@@ -1,0 +1,26 @@
+.users-num {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+
+    .container {
+        width: 25%;
+        padding: 2rem 0 2rem 3rem;
+        background-color: $default;
+        border: 1px solid rgba(33, 63, 125, 0.06);
+        box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+        border-radius: 4px;
+
+        .head{
+            font-size: $size-m2;
+            font-weight: $font-w;
+            margin: 1.4rem 0 1.2rem;
+        }
+        .num {
+            font-size: $size-l;
+            font-weight: $font-wmd;
+        }
+
+    }
+}

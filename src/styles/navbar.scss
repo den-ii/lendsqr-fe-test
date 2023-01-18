@@ -1,0 +1,114 @@
+.navbar {
+    color: $primary;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    
+    nav {
+        display: flex;
+        align-items: center;
+        height: 100px;
+        justify-content: space-between;
+        background: #FFFFFF;
+        padding-left: 3.5rem;
+        box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+
+        .logo {
+            height: 30px;
+            width: 144px;
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        .search-bar {
+            margin-left: -16rem;
+
+            form {
+                display: flex;
+                align-items: center;
+
+                input::-webkit-input-placeholder {
+                    color: #545F7D;
+                    opacity: 0.7;
+                }
+            }
+
+            input {
+                height: 40px;
+                font-family: $WorkSans;
+                font-size: $size-m2;
+                padding: 0 2rem;
+                width: 400px - 50px;
+                background: #FFFFFF;
+                border: 1px solid lighten(#545F7D, 30%);
+                border-top-left-radius: 8px;
+                border-bottom-left-radius: 8px;
+                border-right: none;
+
+                &:focus {
+                    border: 1px solid #213F7D;
+                    outline: none;
+                    
+                }
+            }
+
+            button {
+                height: 40px;
+                border-top-right-radius: 8px;
+                border-bottom-right-radius: 8px;
+                width: 56px;
+            }
+        }
+
+        .links {
+            display: flex;
+            align-items: center;
+            margin-right: 5rem;
+
+            .docs {
+                text-decoration: underline;
+                margin-right: 5rem;
+                cursor: pointer;
+                font-family: $Roboto;
+            }
+            .notification{
+                margin-right: 3.3rem;
+                cursor: pointer;
+                font-size: 2rem;
+            }
+            .profile{
+                display: flex;
+                align-items: center;
+                font-family: $WorkSans;
+                .profile-pic{
+                    width: 50px;
+                    height: 50px;
+                    margin-right: 1rem;
+                    cursor: pointer;
+                    img{
+                     width: 100%;
+                     height: 100%;
+                     border-radius: 50px;
+                    }
+                 }
+            }
+            .name__dropdown{
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                .name {
+                    margin-right: 1rem;
+                    font-weight: $font-w;
+                }
+
+            }
+            
+        }
+    }
+}
