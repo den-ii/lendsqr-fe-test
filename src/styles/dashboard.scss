@@ -1,23 +1,31 @@
 .dashboard {
     .outlet__side-nav {
-        margin-top: 100px;
+
         display: flex;
         justify-content: space-between;
 
-        @media screen and (max-width: 700px) {
-            display: block;
-        }
+
     }
 
     .side-navs {
-        @media screen and (max-width: 700px) {
+        @media screen and (max-width: 850px) {
             position: absolute;
+            width: 0;
         }
     }
 
-    .main {
+    .main-container {
         width: 100%;
         background-color: $defaultbg;
+        margin-top: 100px;
+
+        @media screen and (max-width: 850px) {
+            margin-top: 70px
+        }
+
+        @media screen and (max-width: 650px) {
+            padding: 1rem
+        }
 
         .outlet {
             width: 93%;

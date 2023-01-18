@@ -6,8 +6,8 @@
     left: 0;
     width: 100%;
     z-index: 100;
-    
-    nav {
+
+    nav.big {
         display: flex;
         align-items: center;
         height: 100px;
@@ -16,99 +16,180 @@
         padding-left: 3.5rem;
         box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
 
-        .logo {
-            height: 30px;
-            width: 144px;
-
-            img {
-                height: 100%;
-                width: 100%;
-            }
+        @media screen and (max-width:850px) {
+            display: none;
         }
 
-        .search-bar {
-            margin-left: -16rem;
+    }
 
-            form {
-                display: flex;
-                align-items: center;
+    .logo {
+        height: 30px;
+        width: 144px;
 
-                input::-webkit-input-placeholder {
-                    color: #545F7D;
-                    opacity: 0.7;
-                }
-            }
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
 
-            input {
-                height: 40px;
-                font-family: $WorkSans;
-                font-size: $size-m2;
-                padding: 0 2rem;
-                width: 400px - 50px;
-                background: #FFFFFF;
-                border: 1px solid lighten(#545F7D, 30%);
-                border-top-left-radius: 8px;
-                border-bottom-left-radius: 8px;
-                border-right: none;
+    .search-bar {
+        margin-left: -16rem;
 
-                &:focus {
-                    border: 1px solid #213F7D;
-                    outline: none;
-                    
-                }
-            }
-
-            button {
-                height: 40px;
-                border-top-right-radius: 8px;
-                border-bottom-right-radius: 8px;
-                width: 56px;
-            }
+        @media screen and (max-width:1200px) {
+            margin-left: 0;
         }
 
-        .links {
+
+        form {
             display: flex;
             align-items: center;
-            margin-right: 5rem;
 
-            .docs {
-                text-decoration: underline;
-                margin-right: 5rem;
-                cursor: pointer;
-                font-family: $Roboto;
+            input::-webkit-input-placeholder {
+                color: #545F7D;
+                opacity: 0.7;
             }
-            .notification{
-                margin-right: 3.3rem;
-                cursor: pointer;
-                font-size: 2rem;
+        }
+
+        input {
+            height: 40px;
+            font-family: $WorkSans;
+            font-size: $size-m2;
+            padding: 0 2rem;
+            width: 400px - 50px;
+            background: #FFFFFF;
+            border: 1px solid lighten(#545F7D, 30%);
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-right: none;
+
+            @media screen and (max-width:1200px) {
+                width: 250px;
             }
-            .profile{
+
+            @media screen and (max-width:840px) {
+                width: 200px;
+            }
+
+            &:focus {
+                border: 1px solid #213F7D;
+                outline: none;
+
+            }
+        }
+
+        button {
+            height: 40px;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            width: 56px;
+        }
+    }
+
+    .links {
+        display: flex;
+        align-items: center;
+        margin-right: 5rem;
+
+        .docs {
+            text-decoration: underline;
+            margin-right: 5rem;
+            cursor: pointer;
+            font-family: $Roboto;
+
+            @media screen and (max-width:1200px) {
+                margin-right: 2rem;
+            }
+        }
+
+        .notification {
+            margin-right: 3.3rem;
+            cursor: pointer;
+            font-size: 2rem;
+
+            @media screen and (max-width:1200px) {
+                margin-right: 2rem;
+            }
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            font-family: $WorkSans;
+
+            .profile-pic {
+                width: 50px;
+                height: 50px;
+                margin-right: 1rem;
+                cursor: pointer;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50px;
+                }
+            }
+        }
+
+        .name__dropdown {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            .name {
+                margin-right: 1rem;
+                font-weight: $font-w;
+            }
+
+        }
+
+    }
+
+    nav.mobile {
+        display: none;
+
+
+        @media screen and (max-width: 850px) {
+            display: block;
+
+            .head-container {
+                padding: 1rem 3rem;
                 display: flex;
+                justify-content: space-between;
+                height: 70px;
                 align-items: center;
-                font-family: $WorkSans;
-                .profile-pic{
-                    width: 50px;
-                    height: 50px;
-                    margin-right: 1rem;
-                    cursor: pointer;
-                    img{
-                     width: 100%;
-                     height: 100%;
-                     border-radius: 50px;
-                    }
-                 }
-            }
-            .name__dropdown{
-                display: flex;
-                align-items: center;
-                cursor: pointer;
-                .name {
-                    margin-right: 1rem;
-                    font-weight: $font-w;
+                background-color: $default;
+
+                .logo img {
+                    width: 110px;
                 }
 
+                .burger {
+                    font-size: 3rem;
+
+                }
+
+
             }
-            
+
+            .burger-dropdown {
+                font-family: $WorkSans;
+                background-color: white;
+                font-size: $sm-size-l;
+                display: none;
+
+
+                div {
+                    padding: 1rem 3rem;
+
+                    span {
+                        margin-left: 1rem;
+                    }
+                }
+            }
+
+            .burger-none {
+                display: block;
+            }
         }
     }
 }

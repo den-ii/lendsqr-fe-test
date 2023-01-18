@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsBell } from "react-icons/bs";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { GrDocumentText } from "react-icons/gr";
+import { FaRegUser } from "react-icons/fa";
 
 export const Navbar = () => {
+  const [burger, setBurger] = useState(false);
+
+  const burgerClass = burger ? "burger-none" : "";
   return (
     <header className="navbar">
-      <nav>
+      <nav className="big">
         <div className="logo">
           <img src="/assets/logo.svg" loading="lazy" alt="logo" />
         </div>
@@ -32,6 +38,30 @@ export const Navbar = () => {
                 <img src="/assets/dropdown.svg" alt="fropdown" />
               </div>
             </div>
+          </div>
+        </div>
+      </nav>
+      <nav className="mobile">
+        <div className="head-container">
+          <div className="logo">
+            <img src="/assets/logo.svg" loading="lazy" alt="logo" />
+          </div>
+          <div className="burger" onClick={() => setBurger(!burger)}>
+            <HiOutlineMenuAlt3 />
+          </div>
+        </div>
+        <div className={`burger-dropdown ${burgerClass}`}>
+          <div className="docs">
+            <GrDocumentText />
+            <span>Docs</span>
+          </div>
+          <div className="notification">
+            <FaRegUser />
+            <span>Notification</span>
+          </div>
+          <div className="profile">
+            <FaRegUser />
+            <span>Profile</span>
           </div>
         </div>
       </nav>

@@ -11,7 +11,7 @@ export const Dashboard = () => {
         <div className="side-navs">
           <SideNav />
         </div>
-        <div className="main">
+        <div className="main-container">
           <div className="outlet">
             <Outlet />
           </div>

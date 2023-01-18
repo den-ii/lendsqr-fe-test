@@ -10,6 +10,21 @@
         display: flex;
         align-items: center;
 
+        @media screen and (max-width: 600px) {
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media screen and (max-width: 500px) {
+            gap: 1rem;
+            display: block;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
         .avatar {
             width: 100px;
             height: 100px;
@@ -24,11 +39,21 @@
             flex-direction: column;
             gap: 1rem;
 
+            @media screen and (max-width: 600px) {
+                padding: 2rem;
+                flex-wrap: wrap;
+            }
+
         }
 
         .users-tier {
             border-left: 1px solid lighten($primary2, 40%);
             border-right: 1px solid lighten($primary2, 40%);
+
+            @media screen and (max-width: 600px) {
+                border: none;
+                font-size: $sm-size-xl;
+            }
 
             .top {
                 font-weight: 500;
@@ -49,6 +74,11 @@
         margin-top: 5.1rem;
         display: flex;
         justify-content: space-between;
+
+        @media screen and (max-width: 1000px) {
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
 
         .active {
             color: $secondary;

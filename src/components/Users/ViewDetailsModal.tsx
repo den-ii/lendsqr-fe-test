@@ -26,7 +26,7 @@ const ViewDetailsModal = ({ id }: any) => {
           <div onClick={view}>View Details</div>
         </div>
       </div>
-      <div className="link">
+      <div className="link blacklist">
         <img src="/assets/blacklist.svg" alt="" />
         <div>
           <div onClick={() => blacklist(id)}>Blacklist User</div>

@@ -5,6 +5,8 @@ import {
   createContext,
   MouseEventHandler,
 } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { convertDate } from "../../components/Users/utilities";
 import { status } from "./../../components/Users/utilities";
 
@@ -35,9 +37,28 @@ export const UsersContextProvider = ({
 
   const [filteredUsers, setFilteredUsers] = useState([]);
 
-  console.log(filteredUsers);
-  console.log(users);
-
+  const activated = () =>
+    toast.success("✔ ACTIVATED!", {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: "light",
+    });
+  const blacklisted = () =>
+    toast.warning("❌ DEACTIVATED!", {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: "light",
+    });
   //changing date format
   const changingDateFormat = (users: any) => {
     const newUsers = users?.map((user: any) => {
@@ -97,6 +118,7 @@ export const UsersContextProvider = ({
     });
     setUsers(activeUsers);
     setFilteredUsers(activeUsers);
+    activated();
   };
   //handles setting blackist user
   const blacklist = (id: any) => {
@@ -113,12 +135,14 @@ export const UsersContextProvider = ({
     });
     setUsers(blacklistUsers);
     setFilteredUsers(blacklistUsers);
+    blacklisted();
   };
   return (
     <UsersContext.Provider
       value={{ users, filteredUsers, setFilteredUsers, active, blacklist }}
     >
       {children}
+      <ToastContainer />
     </UsersContext.Provider>
   );
 };

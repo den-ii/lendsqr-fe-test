@@ -15,7 +15,9 @@ export const FilteredData = ({ data }: any) => {
 
   return (
     <div className="profile">
-      <div title={data.orgName}>{data.orgName.slice(0, 18)}</div>
+      <div className="organ" title={data.orgName}>
+        {data.orgName.slice(0, 18)}
+      </div>
       <div
         title={`${data.profile.firstName} ${data.profile.lastName}`}
       >{`${data.profile.firstName} ${data.profile.lastName}`}</div>
@@ -25,7 +27,7 @@ export const FilteredData = ({ data }: any) => {
       <div className="phone" title={data.phoneNumber}>
         {data.phoneNumber}
       </div>
-      <div>{data.createdAt}</div>
+      <div className="date">{data.createdAt}</div>
       <div onClick={handleViewModal} ref={viewRef}>
         {viewModal && (
           <div>

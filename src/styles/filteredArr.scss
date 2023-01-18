@@ -33,6 +33,15 @@
                     grid-template-columns: repeat(4, 1fr);
                 }
 
+                @media screen and (max-width: 1000px) {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+
+                @media screen and (max-width: 460px) {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+
             }
 
             .profile {
@@ -54,6 +63,14 @@
                 @media screen and (max-width: 1200px) {
                     grid-template-columns: repeat(4, 1fr);
                     align-content: space-between;
+                }
+
+                @media screen and (max-width: 1000px) {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+
+                @media screen and (max-width: 460px) {
+                    grid-template-columns: repeat(2, 1fr);
                 }
 
                 div {
@@ -124,6 +141,18 @@
                 }
             }
 
+            @media screen and (max-width: 1000px) {
+                .date {
+                    display: none;
+                }
+            }
+
+            @media screen and (max-width: 460px) {
+                .organ {
+                    display: none
+                }
+            }
+
 
         }
 
@@ -134,11 +163,17 @@
         justify-content: space-between;
         background-color: $defaultbg;
 
+        @media screen and (max-width: 550px) {
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
         .filter-container {
             display: flex;
             align-items: center;
             position: relative;
-            z-index: -1;
+
         }
 
         .filter {
@@ -154,6 +189,11 @@
             border-radius: 6px;
             justify-content: space-between;
             align-items: center;
+
+            @media screen and (max-width: 850px) {
+                z-index: 98;
+            }
+
         }
     }
 

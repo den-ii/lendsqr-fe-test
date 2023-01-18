@@ -11,15 +11,15 @@ export const SideNav = () => {
   };
   const mobileClass = mobile ? "mobile-active" : "mobile-inactive";
   return (
-    <div className={`side-nav ${mobileClass}`}>
-      <div
-        className={`arrow-mobile ${mobileClass}`}
-        onClick={() => setMobile(!mobile)}
-      >
-        <HiOutlineArrowRight />
-      </div>
+    <div className="side-nav">
       <div></div>
-      <nav>
+      <nav className={`${mobileClass}`}>
+        <div
+          className={`arrow-mobile ${mobileClass}`}
+          onClick={() => setMobile(!mobile)}
+        >
+          <HiOutlineArrowRight />
+        </div>
         <div className="organization">
           <img src="/assets/briefcase.svg" loading="lazy" alt="organizations" />
           <p>Switch Organization</p>
@@ -201,52 +201,43 @@ export const SideNav = () => {
             </li>
           </ul>
         </div>
+        {/* BUSINESS */}
 
-        {/* SETTINGS */}
-
-        <div className="settings">
+        <div className="business">
           <div className="heading">SETTINGS</div>
           <ul>
             <li>
-              <NavLink className="side-link" to="/dashboard/preferences">
+              <NavLink className="side-link" to="/dashboard/organization">
                 <img
                   src="/assets/preferences.svg"
                   loading="lazy"
-                  alt="preferences"
+                  alt="organization"
                 />
                 <p>Preferences</p>
               </NavLink>
             </li>
             <li>
-              <NavLink className="side-link" to="/dashboard/fees_pricing">
-                <img
-                  src="/assets/fp.svg"
-                  loading="lazy"
-                  alt="fees and pricing"
-                />
+              <NavLink className="side-link" to="/dashboard/loanproducts">
+                <img src="/assets/fp.svg" loading="lazy" alt="loan products" />
                 <p>Fees and Pricing</p>
               </NavLink>
             </li>
             <li>
-              <NavLink className="side-link" to="/dashboard/audit_logs">
-                <img
-                  src="/assets/audit.svg"
-                  loading="lazy"
-                  alt="savingsproducts"
-                />
+              <NavLink className="side-link" to="/dashboard/savingsproducts">
+                <img src="/assets/audit.svg" loading="lazy" alt="audit logs" />
                 <p>Audit Logs</p>
               </NavLink>
             </li>
           </ul>
         </div>
-      </nav>
-      <div className="logout-container">
-        <div className="logout" onClick={() => handleLogout()}>
-          <img src="/assets/sign-out.svg" alt="logout" />
-          <div>Logout</div>
+        <div className="logout-container">
+          <div className="logout" onClick={handleLogout}>
+            <img src="/assets/sign-out.svg" />
+            LogOut
+          </div>
+          <div>v1.2.0</div>
         </div>
-        <div>v1.2.0</div>
-      </div>
+      </nav>
     </div>
   );
 };

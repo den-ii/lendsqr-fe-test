@@ -31,6 +31,9 @@ export const Login = () => {
         </div>
       </div>
       <div className="form-side">
+        <div className="mobile-logo">
+          <img src="/assets/logo.svg" alt="logo" />
+        </div>
         <div className="greetings">
           <h2>Welcome!</h2>
           <p>Enter details to login.</p>

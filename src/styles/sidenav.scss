@@ -1,18 +1,10 @@
 .side-nav {
-    font-family: $WorkSans;
-    color: $primary;
-    width: 283px;
-    background-color: $default;
-    position: relative;
-    transition: 1s;
-
-
-    .arrow-mobile {
+    nav .arrow-mobile {
         display: none;
     }
 
-    @media screen and (max-width: 700px) {
-        .arrow-mobile {
+    @media screen and (max-width: 850px) {
+        nav .arrow-mobile {
             display: block;
             width: 50px;
             height: 50px;
@@ -22,15 +14,18 @@
             justify-content: center;
             font-size: $size-l;
             background-color: white;
-            position: absolute;
-            right: -40px;
+            position: fixed;
+            top: 80px;
+            left: -5px;
             box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
             transition: .5s;
+            z-index: 100;
 
         }
 
-        .arrow-mobile.mobile-inactive {
+        nav .arrow-mobile.mobile-inactive {
             transform: rotate(180deg);
+            left: 280px;
         }
 
     }
@@ -38,11 +33,32 @@
 
 
 
-
     nav {
+        font-family: $WorkSans;
+        color: $primary;
+        background-color: $default;
+        position: relative;
+        transition: 0.5s;
         padding-top: 3.9rem;
         box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
         overflow: hidden;
+        width: 283px;
+        z-index: 99;
+        margin-top: 100px;
+
+        @media screen and (max-width: 1100px) {
+            width: 250px;
+
+        }
+
+        @media screen and (max-width: 850px) {
+            position: fixed;
+            height: calc(100vh - 70px);
+            overflow: scroll;
+            background-color: $default;
+            margin-top: 70px;
+
+        }
 
         .dashboard {
             margin-bottom: 1rem;
@@ -95,13 +111,14 @@
     }
 
     .logout-container {
-        height: 100%;
         padding: 3rem;
         color: $primary;
         display: flex;
         flex-direction: column;
         gap: 4rem;
         justify-content: space-between;
+        border-top: 1px solid rgba(#213F7D, 0.5);
+        // background-color: $defaultbg;
 
         .logout {
             cursor: pointer;
@@ -116,20 +133,16 @@
     }
 }
 
-.side-nav.mobile-active {
-    @media screen and (max-width: 700px) {
+nav.mobile-active {
+    @media screen and (max-width: 850px) {
         width: 0px;
-        height: 100vh;
-        position: fixed;
-        z-index: 100;
-        overflow-y: scroll;
+        z-index: 99;
+        overflow: scroll;
     }
 }
 
-.side-nav.mobile-inactive {
-    @media screen and (max-width: 700px) {
+nav.mobile-inactive {
+    @media screen and (max-width: 850px) {
         width: 283px;
-
-
     }
 }

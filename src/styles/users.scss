@@ -1,13 +1,19 @@
-.users{
+.users {
     font-family: $WorkSans;
     color: $primary;
-    
-    .heading{
+
+    .heading {
         font-weight: $font-w;
         font-size: $size-l;
 
+        @media screen and (max-width: 600px) {
+            font-size: $sm-size-l;
+        }
+
     }
-    .usersNum, .filteredSection{
+
+    .usersNum,
+    .filteredSection {
         margin-top: 4rem;
     }
 }
