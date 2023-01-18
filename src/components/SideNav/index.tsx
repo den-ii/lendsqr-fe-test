@@ -20,12 +20,13 @@ export const SideNav = () => {
     <div ref={sideNavRef} className="side-nav">
       <div></div>
       <nav className={`${mobileClass}`}>
-        <div
-          className={`arrow-mobile ${mobileClass}`}
-          onClick={() => setMobile(!mobile)}
-        >
-          llll
-          <HiOutlineArrowRight />
+        <div style={{ zIndex: "100" }}>
+          <div
+            className={`arrow-mobile ${mobileClass}`}
+            onClick={() => setMobile(!mobile)}
+          >
+            <HiOutlineArrowRight />
+          </div>
         </div>
         <div className="organization">
           <img src="/assets/briefcase.svg" loading="lazy" alt="organizations" />

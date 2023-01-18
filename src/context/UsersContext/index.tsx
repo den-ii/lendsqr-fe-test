@@ -80,13 +80,11 @@ export const UsersContextProvider = ({
         user.lastActiveDate.slice(0, 4),
         user.education.loanRepayment
       );
-      console.log(returnedStatus);
       return {
         ...user,
         state: returnedStatus,
       };
     });
-    console.log(userStatus);
     return userStatus;
   };
 
@@ -95,7 +93,6 @@ export const UsersContextProvider = ({
       .then((res) => res.json())
       .then((data) => {
         changingDateFormat(data);
-        console.log(users);
       });
   }, []);
 

@@ -20,12 +20,7 @@ export default function PaginatedItems({
   const [itemOffset, setItemOffset] = useState(0);
   const [manualreRerender, setmanualRerender] = useState(false);
 
-  // Simulate fetching items from another resources.
-  // (This could be items from props; or items loaded in a local state
-  // from an API endpoint with useEffect and useState)
   const endOffset = itemOffset + itemsPerPage;
-  // console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-  console.log(items);
   const currentItems = items.slice(itemOffset, endOffset);
 
   useEffect(() => {
@@ -35,11 +30,7 @@ export default function PaginatedItems({
   const pageCount = Math.ceil(items.length / itemsPerPage);
   const handlePageClick = (event: { selected: number }) => {
     const newOffset = (event.selected * itemsPerPage) % items.length;
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
     setItemOffset(newOffset);
-    console.log(newOffset);
   };
   const closeFilter = () => {
     setFilter(false);

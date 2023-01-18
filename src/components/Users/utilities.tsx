@@ -1,5 +1,4 @@
 export const status = (activeDate: string, loan: string) => {
-  console.log(activeDate);
   const date = parseInt(activeDate.slice(0, 4));
   if (date > 2050) {
     return {
@@ -36,7 +35,6 @@ export const convertDate = (date: string) => {
   const time = formedDateArr[4].slice(0, 5);
   const formedTime = checkTime(time);
   let newFormedDate = `${formedDateArr[1]} ${formedDateArr[2]}, ${formedDateArr[3]} ${formedTime}`;
-  console.log(newDate.toString().split(" "));
   return newFormedDate;
 };
 
