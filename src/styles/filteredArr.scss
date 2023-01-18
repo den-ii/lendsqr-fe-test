@@ -3,6 +3,7 @@
     min-height: 100vh;
     justify-content: space-between;
     flex-direction: column;
+
     .main-container {
         background: #FFFFFF;
         border: 1px solid rgba(33, 63, 125, 0.06);
@@ -110,21 +111,22 @@
                 display: flex;
 
             }
+
             @media screen and (max-width: 1400px) {
                 .phone {
                     display: none;
                 }
             }
-        
+
             @media screen and (max-width: 1200px) {
-                 .email {
+                .email {
                     display: none;
                 }
             }
 
 
         }
-       
+
     }
 
     .filtering {
@@ -136,6 +138,7 @@
             display: flex;
             align-items: center;
             position: relative;
+            z-index: -1;
         }
 
         .filter {
@@ -196,5 +199,5 @@
         }
     }
 
-  
+
 }

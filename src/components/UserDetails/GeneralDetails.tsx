@@ -1,9 +1,6 @@
-import { useContext } from "react";
 import { children, maritalStatus, NGN, residence } from "./utilities";
-import { UsersContext } from "./../../context/UsersContext/index";
 
 const GeneralUserDetails = () => {
-  const { active, blacklist } = useContext(UsersContext);
   const value = localStorage.getItem("userDetail");
 
   const userDetail = typeof value === "string" ? JSON.parse(value) : "";

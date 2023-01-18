@@ -18,8 +18,14 @@ $font-w: 500;
 $size-xl: 4rem;
 $size-l: 2.4rem;
 $size-m: 1.6rem;
-$size-m2:1.4rem;
+$size-m2: 1.4rem;
 $size-sm: 1.2rem;
+
+$sm-size-xl: 1.9rem;
+$sm-size-l: 1.7rem;
+$sm-size-m: 1.2rem;
+$sm-size-m2: 1rem;
+$sm-size-sm: 0.8rem;
 
 //fonts
 
@@ -29,10 +35,12 @@ $size-sm: 1.2rem;
     font-family: "Avenir";
     src: url("/fonts/AvenirNextLTPro-Regular.otf");
 }
+
 @font-face {
     font-family: "Avenir-bold";
     src: url("/fonts/AvenirNextLTPro-Bold.otf");
 }
+
 $Avenir: "Avenir", sans-serif;
 $Avenir-bold: "Avenir-bold", sans-serif;
 $Roboto: "Roboto", sans-serif;
