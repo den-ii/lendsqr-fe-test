@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { HiOutlineArrowRight } from "react-icons/hi";
 
 export const SideNav = () => {
-  const [mobile, setMobile] = useState(false);
+  const [mobile, setMobile] = useState(true);
   const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.clear();
