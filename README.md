@@ -1,6 +1,7 @@
 # lendsqr-fe-test
 
 ![lends2](https://user-images.githubusercontent.com/104834114/213447593-6b7d7cbf-8fe2-45fb-a97f-e824ddd2fc2a.jpg)
+**Visit [Live Link](https://deni-wisdom-ochiche-lendsqr-fe-test.netlify.app/)**
 
 
 ## Assessment
