@@ -9,15 +9,13 @@ type LoginTypes = {
   loginData: Form;
   handleLoginData: (e: React.ChangeEvent<HTMLInputElement>) => void;
   error?: boolean;
-  handleError: () => void;
-  // user: boolean;
+  setError: React.Dispatch<React.SetStateAction<boolean>>;
 };
 const initialState: LoginTypes = {
   loginData: { email: "", password: "" },
   handleLoginData: () => {},
   error: true,
-  handleError: () => {},
-  // user: false,
+  setError: () => {},
 };
 const error: boolean = initialState.error as boolean;
 type LoginContextProviderProps = {
@@ -31,25 +29,6 @@ export const LoginContextProvider = ({
 }: LoginContextProviderProps) => {
   const [loginData, setLoginData] = useState<Form>({ email: "", password: "" });
   const [error, setError] = useState<boolean>(false);
-  // const [user, setUser] = useState<boolean>(false);
-
-  const handleError = () => {
-    if (loginData.email.length) {
-      if (
-        loginData.email === "adedeji@gmail.com" &&
-        loginData.password.length > 5
-      ) {
-        setError(false);
-        localStorage.setItem("user", "true");
-      } else {
-        setError(true);
-        localStorage.setItem("user", "false");
-      }
-    } else {
-      setError(true);
-      localStorage.setItem("user", "false");
-    }
-  };
   const handleLoginData = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setLoginData((prevLoginData) => ({
@@ -60,7 +39,7 @@ export const LoginContextProvider = ({
 
   return (
     <LoginContext.Provider
-      value={{ loginData, handleLoginData, error, handleError }}
+      value={{ loginData, handleLoginData, error, setError }}
     >
       {children}
     </LoginContext.Provider>

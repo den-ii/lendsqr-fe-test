@@ -1,11 +1,10 @@
 import { useState, useContext } from "react";
 import { LoginContext } from "../../context/LoginContext";
 import { Link, useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MdError } from "react-icons/md";
 
 export const Login = () => {
-  const { loginData, handleLoginData, error, handleError } =
+  const { loginData, handleLoginData, error, setError } =
     useContext(LoginContext);
   const [showpswd, setShowpswd] = useState(false);
   const navigate = useNavigate();
@@ -13,11 +12,28 @@ export const Login = () => {
   const handleShowpswd = () => {
     setShowpswd(!showpswd);
   };
+  const handleError = () => {
+    if (loginData.email.length) {
+      if (
+        loginData.email === "adedeji@gmail.com" &&
+        loginData.password.length > 5
+      ) {
+        setError(false);
+        localStorage.setItem("user", "true");
+        navigate("/dashboard/users");
+      } else {
+        setError(true);
+        localStorage.clear();
+      }
+    } else {
+      setError(true);
+      localStorage.clear();
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     handleError();
-    !error ? navigate("/dashboard/users") : null;
   };
 
   return (

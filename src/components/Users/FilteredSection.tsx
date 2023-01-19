@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { UsersContext } from "../../context/UsersContext";
 import { FilteredData } from "./FilteredData";
 import Paginate from "./Paginate";
@@ -31,14 +31,16 @@ export const FilteredSection = () => {
     setCurrentItems(items);
   };
 
-  const Items = currentItems.map((item: any) => <FilteredData data={item} />);
+  const Items = currentItems.map((item: any, index: any) => (
+    <FilteredData key={index} data={item} />
+  ));
 
   // console.log(filteredUsers);
   return (
     <section className="filtered-section">
       <div className="main-container">
         <div className="main">
-          <div className="heading">{HeadingArr}</div>
+          <h2 className="heading">{HeadingArr}</h2>
           {Items}
         </div>
       </div>

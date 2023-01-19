@@ -1,6 +1,6 @@
 import { useNavigate, Outlet, redirect, Navigate } from "react-router";
 import { LoginContext } from "../context/LoginContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 interface ProtectedRouteProps {
   redirectPath?: string;
 }
@@ -10,9 +10,11 @@ export const ProtectedRoute = ({
 }: ProtectedRouteProps) => {
   const navigate = useNavigate();
   const user = localStorage.getItem("user");
-  if (!user) {
-    navigate(redirectPath);
-  }
+  useEffect(() => {
+    if (!user && user !== "true") {
+      navigate(redirectPath);
+    }
+  });
 
   return <Outlet />;
 };
