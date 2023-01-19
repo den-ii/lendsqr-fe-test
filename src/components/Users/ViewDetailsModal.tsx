@@ -26,16 +26,16 @@ const ViewDetailsModal = ({ id }: any) => {
           <div onClick={view}>View Details</div>
         </div>
       </div>
-      <div className="link blacklist">
+      <div className="link blacklist" onClick={() => blacklist(id)}>
         <img src="/assets/blacklist.svg" alt="" />
         <div>
-          <div onClick={() => blacklist(id)}>Blacklist User</div>
+          <div>Blacklist User</div>
         </div>
       </div>
-      <div className="link">
+      <div className="link" onClick={() => active(id)}>
         <img src="/assets/active.svg" alt="" />
         <div>
-          <div onClick={() => active(id)}>Activate User</div>
+          <div>Activate User</div>
         </div>
       </div>
     </div>
