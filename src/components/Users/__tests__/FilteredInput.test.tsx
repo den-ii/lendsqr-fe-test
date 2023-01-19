@@ -1,13 +1,8 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { assert, describe, expect, it, vi } from "vitest";
-import renderer from "react-test-renderer";
+import { describe, expect, it, vi } from "vitest";
 import FilterInput from "../FilterInput";
 import { FilteringContextProvider } from "../../../context/FilteringContext";
-
-const handleReset = vi.mock("../FilterInput", () => ({
-  handleReset: vi.fn(),
-}));
 
 beforeEach(() => {
   render(
@@ -39,7 +34,7 @@ describe("User Filter Input", () => {
     fireEvent.change(inputElement, { target: { value: "deni@gmail.com" } });
     expect(inputElement.value).toBe("deni@gmail.com");
   });
-  it("Name Input", () => {
+  it("Phone Number", () => {
     const inputElement = screen.getByRole("textbox", {
       name: /phone number/i,
     });

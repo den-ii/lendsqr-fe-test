@@ -19,7 +19,7 @@ describe("renders login details", () => {
     const passwordElement = screen.getByPlaceholderText(/password/i);
     expect(passwordElement).toBeInTheDocument();
   });
-  it("render password", () => {
+  it("render error on failed login", () => {
     const inputElement = screen.getByRole("textbox");
     fireEvent.change(inputElement, { target: { value: "deni" } });
     const passwordElement = screen.getByPlaceholderText(/password/i);
