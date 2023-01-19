@@ -1,5 +1,8 @@
 # lendsqr-fe-test
 
+![lends2](https://user-images.githubusercontent.com/104834114/213447593-6b7d7cbf-8fe2-45fb-a97f-e824ddd2fc2a.jpg)
+
+
 ## Assessment
 Given the design here: https://www.figma.com/file/ZKILoCoIoy1IESdBpq3GNC/FrontendTesting?node-id=5530%3A0  which has sample pages to be built.
 
