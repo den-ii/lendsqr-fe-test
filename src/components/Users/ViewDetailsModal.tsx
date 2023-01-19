@@ -20,10 +20,10 @@ const ViewDetailsModal = ({ id }: any) => {
 
   return (
     <div className="view-details">
-      <div className="link">
+      <div className="link" onClick={view}>
         <img src="/assets/eye.svg" alt="" />
         <div>
-          <div onClick={view}>View Details</div>
+          <div>View Details</div>
         </div>
       </div>
       <div className="link blacklist" onClick={() => blacklist(id)}>
