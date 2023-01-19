@@ -26,6 +26,8 @@ Login in with adedeji@gmail.com and any password with length greater than five
 - Filter the Users
 - View User Details
 - Activate and Blacklist accounts
+- Pagination
+- Pop up on activation or blacklist accounts
 
 ## How to run Locally
 This React application is created with Vite
