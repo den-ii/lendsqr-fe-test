@@ -3,8 +3,6 @@ import React from "react";
 import { assert, describe, expect, it, vi } from "vitest";
 import { Navbar } from "./../index";
 
-const mockedBurger = vi.fn();
-
 describe("Navbar Tests", () => {
   it("render Nav-Logo", () => {
     render(<Navbar />);
