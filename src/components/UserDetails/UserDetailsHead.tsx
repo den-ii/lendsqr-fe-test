@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 import { NGN } from "./utilities";
 
@@ -7,8 +6,7 @@ const UserDetailsHead = () => {
   const value = localStorage.getItem("userDetail");
 
   const userDetail = typeof value === "string" ? JSON.parse(value) : "";
-  console.log("userDetail", userDetail);
-  const avatar = userDetail.profile.avatar
+  const avatar = userDetail.profile?.avatar
     ? userDetail.profile?.avatar
     : "/assets/avatar.svg";
 
@@ -17,7 +15,7 @@ const UserDetailsHead = () => {
       <div className="top">
         <img src={avatar} alt="avatar" className="avatar" loading="lazy" />
         <div className="name_acc">
-          <div className="name top">{`${userDetail.profile.firstName} ${userDetail.profile.lastName}`}</div>
+          <div className="name top">{`${userDetail.profile?.firstName} ${userDetail.profile?.lastName}`}</div>
           <div className="acc_no">{userDetail.accountNumber}</div>
         </div>
         <div>

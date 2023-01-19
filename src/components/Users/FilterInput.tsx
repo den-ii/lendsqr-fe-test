@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { FilteringContext } from "./../../context/FilteringContext/index";
 import { convertDate, option } from "./utilities";
 import { UsersContext } from "./../../context/UsersContext/index";
-import { FilteredSection } from "./FilteredSection";
 
 const FilterInput = ({ handleCi, manual, closeFilter }: any) => {
   const {
@@ -154,11 +153,13 @@ const FilterInput = ({ handleCi, manual, closeFilter }: any) => {
         <div className="form-container select">
           <label htmlFor="status">Status</label>
           <select onChange={(e) => setStatus(e.target.value)} value={status}>
-            <option value="" disabled selected>
+            <option value="" disabled>
               Select
             </option>
-            {option.map((x) => (
-              <option value={x}>{x}</option>
+            {option.map((x, index) => (
+              <option key={index} value={x}>
+                {x}
+              </option>
             ))}
           </select>
           <img src="/assets/down-arrow.svg" alt="" />

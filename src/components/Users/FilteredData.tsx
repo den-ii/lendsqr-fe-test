@@ -36,7 +36,7 @@ export const FilteredData = ({ data }: any) => {
         )}
         <div className={`is${data.state?.status}`}>
           <span>{data.state?.status}</span>
-          <img src="/assets/threedots.svg" />
+          <img src="/assets/threedots.svg" alt="viewdetails" />
         </div>
       </div>
     </div>

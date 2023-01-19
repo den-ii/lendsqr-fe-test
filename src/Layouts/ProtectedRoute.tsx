@@ -11,7 +11,7 @@ export const ProtectedRoute = ({
   const navigate = useNavigate();
   const user = localStorage.getItem("user");
   if (!user) {
-    return <Navigate to={redirectPath} replace />;
+    navigate(redirectPath);
   }
 
   return <Outlet />;

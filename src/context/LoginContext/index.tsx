@@ -41,8 +41,14 @@ export const LoginContextProvider = ({
       ) {
         setError(false);
         localStorage.setItem("user", "true");
-      } else setError(true);
-    } else setError(true);
+      } else {
+        setError(true);
+        localStorage.setItem("user", "false");
+      }
+    } else {
+      setError(true);
+      localStorage.setItem("user", "false");
+    }
   };
   const handleLoginData = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;

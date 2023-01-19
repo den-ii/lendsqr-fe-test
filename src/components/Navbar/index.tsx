@@ -18,7 +18,7 @@ export const Navbar = () => {
     <header className="navbar">
       <nav className="big">
         <div className="logo">
-          <img src="/assets/logo.svg" loading="lazy" alt="logo" />
+          <img src="/assets/logo.svg" loading="lazy" alt="nav-logo" />
         </div>
         <div className="search-bar">
           <form>
@@ -54,6 +54,7 @@ export const Navbar = () => {
           </div>
           <div
             className="burger"
+            role="burger"
             ref={burgerMenuRef}
             onClick={() => setBurger(!burger)}
           >

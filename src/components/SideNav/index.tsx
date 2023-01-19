@@ -41,7 +41,7 @@ export const SideNav = () => {
         {/* CUSTOMERS */}
 
         <div className="customers">
-          <div className="heading">CUSTOMERS</div>
+          <h2 className="heading">CUSTOMERS</h2>
           <ul>
             <li>
               <NavLink className="side-link" to="/dashboard/users">
@@ -118,7 +118,7 @@ export const SideNav = () => {
         {/* BUSINESS */}
 
         <div className="business">
-          <div className="heading">BUSINESS</div>
+          <h2 className="heading">BUSINESS</h2>
           <ul>
             <li>
               <NavLink className="side-link" to="/dashboard/organization">
@@ -209,10 +209,10 @@ export const SideNav = () => {
             </li>
           </ul>
         </div>
-        {/* BUSINESS */}
+        {/* SETTINGS */}
 
         <div className="business">
-          <div className="heading">SETTINGS</div>
+          <h2 className="heading">SETTINGS</h2>
           <ul>
             <li>
               <NavLink className="side-link" to="/dashboard/organization">
