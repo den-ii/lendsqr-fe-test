@@ -16,7 +16,7 @@ Given the design here: https://www.figma.com/file/ZKILoCoIoy1IESdBpq3GNC/Fronten
 - Get all users https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users 
 - Get user details by id https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/:id
 
-## HOW TO LOGIN
+## How to Login
 Login in with adedeji@gmail.com and any password with length greather than five
 
 
