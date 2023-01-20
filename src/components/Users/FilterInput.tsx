@@ -57,8 +57,9 @@ const FilterInput = ({ handleCi, manual, closeFilter }: any) => {
     setFilteredUsers(users);
     const newFilteredUsers = users.filter((user: any) => {
       const truthy = [];
-      user.profile.firstName.toLowerCase().startsWith(filters[0]) ||
-      !filters[0]?.length
+      user.profile.firstName
+        .toLowerCase()
+        .startsWith(filters[0].toLowerCase()) || !filters[0]?.length
         ? truthy.push(true)
         : truthy.push(false);
       user.orgName.toLowerCase().startsWith(filters[1].toLowerCase()) ||

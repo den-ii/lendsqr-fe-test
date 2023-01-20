@@ -1,16 +1,36 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { BsBell } from "react-icons/bs";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoDocumentOutline } from "react-icons/io5";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { FaRegUser } from "react-icons/fa";
 import useDropoff from "../../hooks/useDropOff";
+import { UsersContext } from "../../context/UsersContext";
 
 export const Navbar = () => {
+  const { users, setFilteredUsers } = useContext(UsersContext);
   const [burger, setBurger] = useState(false);
+  const [search, setSearch] = useState("");
+
+  const handleSearch = () => {
+    const searchFilter = users.filter((user: any) => {
+      if (
+        user.profile?.firstName.toLowerCase().includes(search.toLowerCase()) ||
+        user.profile?.firstName.toLowerCase().includes(search.toLowerCase())
+      ) {
+        return true;
+      } else if (
+        user.organization?.toLowerCase().includes(search.toLowerCase())
+      ) {
+        return true;
+      } else return false;
+    });
+    setFilteredUsers(searchFilter);
+  };
   const closeBurgerMenu = () => {
     setBurger(false);
   };
+
   const burgerMenuRef = useDropoff(closeBurgerMenu);
 
   const burgerClass = burger ? "burger-none" : "";
@@ -22,7 +42,13 @@ export const Navbar = () => {
         </div>
         <div className="search-bar">
           <form>
-            <input type="text" placeholder="search for anything" />
+            <input
+              type="text"
+              placeholder="search for anything"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              onKeyUp={handleSearch}
+            />
             <button className="search">
               <img src="/assets/search.svg" alt="" />
             </button>

@@ -14,8 +14,8 @@ const Heading = [
 type UsersTypes = {
   users: any;
 };
-const HeadingArr = Heading.map((x: string) => (
-  <div className={`headers ${x.slice(0, 5).toLowerCase()}`}>
+const HeadingArr = Heading.map((x: string, index) => (
+  <div key={index} className={`headers ${x.slice(0, 5).toLowerCase()}`}>
     <div className="allusers">{x}</div>
     <div>
       <img src="/assets/filter.svg" alt="filter" />
