@@ -19,9 +19,7 @@ export const Navbar = () => {
         user.profile?.firstName.toLowerCase().includes(search.toLowerCase())
       ) {
         return true;
-      } else if (
-        user.organization?.toLowerCase().includes(search.toLowerCase())
-      ) {
+      } else if (user.orgName?.toLowerCase().includes(search.toLowerCase())) {
         return true;
       } else return false;
     });
