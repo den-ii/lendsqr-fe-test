@@ -24,6 +24,7 @@ Given the design here: https://www.figma.com/file/ZKILoCoIoy1IESdBpq3GNC/Fronten
 Login in with adedeji@gmail.com and any password with length greater than five
 
 ### What's Working?
+- Search for the users
 - Filter the Users
 - View User Details
 - Activate and Blacklist accounts
