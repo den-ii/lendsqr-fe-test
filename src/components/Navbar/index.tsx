@@ -21,6 +21,8 @@ export const Navbar = () => {
         return true;
       } else if (user.orgName?.toLowerCase().includes(search.toLowerCase())) {
         return true;
+      } else if (user.email?.toLowerCase().includes(search.toLowerCase())) {
+        return true;
       } else return false;
     });
     setFilteredUsers(searchFilter);
@@ -39,7 +41,7 @@ export const Navbar = () => {
           <img src="/assets/logo.svg" loading="lazy" alt="nav-logo" />
         </div>
         <div className="search-bar">
-          <form>
+          <form onSubmit={(e) => e.preventDefault}>
             <input
               type="text"
               placeholder="search for anything"
@@ -71,7 +73,7 @@ export const Navbar = () => {
           </div>
         </div>
       </nav>
-      <nav className="mobile">
+      <nav ref={burgerMenuRef} className="mobile">
         <div className="head-container">
           <div className="logo">
             <img src="/assets/logo.svg" loading="lazy" alt="logo" />
@@ -79,13 +81,21 @@ export const Navbar = () => {
           <div
             className="burger"
             role="burger"
-            ref={burgerMenuRef}
             onClick={() => setBurger(!burger)}
           >
             <HiOutlineMenuAlt3 />
           </div>
         </div>
         <div className={`burger-dropdown ${burgerClass}`}>
+          <form className="mobile-form" onSubmit={(e) => e.preventDefault}>
+            <input
+              type="text"
+              placeholder="search for anything"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              onKeyUp={handleSearch}
+            />
+          </form>
           <div className="docs">
             <IoDocumentOutline />
             <span>Docs</span>

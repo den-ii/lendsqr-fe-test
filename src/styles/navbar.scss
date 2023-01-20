@@ -148,6 +148,24 @@
     nav.mobile {
         display: none;
 
+        .mobile-form {
+            padding: 1rem;
+
+            input {
+                font-family: $WorkSans;
+                display: block;
+                width: 300px;
+                margin: 0 auto;
+                border: 1px solid grey;
+                padding: 0.5rem;
+
+                &:focus {
+                    border: none;
+                    outline: 3px solid $secondary;
+                }
+            }
+        }
+
 
         @media screen and (max-width: 850px) {
             display: block;
