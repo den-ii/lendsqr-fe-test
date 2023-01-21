@@ -12,7 +12,8 @@ export const Navbar = () => {
   const [burger, setBurger] = useState(false);
   const [search, setSearch] = useState("");
 
-  const handleSearch = () => {
+  const handleSearch = (e) => {
+    e.preventDefault();
     const searchFilter = users.filter((user: any) => {
       if (
         user.profile?.firstName.toLowerCase().includes(search.toLowerCase()) ||
@@ -41,7 +42,7 @@ export const Navbar = () => {
           <img src="/assets/logo.svg" loading="lazy" alt="nav-logo" />
         </div>
         <div className="search-bar">
-          <form onSubmit={(e) => e.preventDefault}>
+          <form onSubmit={(e) => handleSearch(e)}>
             <input
               type="text"
               placeholder="search for anything"
