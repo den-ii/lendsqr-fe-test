@@ -12,7 +12,7 @@ export const Navbar = () => {
   const [burger, setBurger] = useState(false);
   const [search, setSearch] = useState("");
 
-  const handleSearch = (e) => {
+  const handleSearch = (e:any) => {
     e.preventDefault();
     const searchFilter = users.filter((user: any) => {
       if (
